@@ -194,7 +194,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 306790656}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.051631775, y: 0.9398157, z: -0.16449074, w: 0.29499745}
+  m_LocalRotation: {x: 0.051631782, y: 0.9398157, z: -0.16449076, w: 0.29499742}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -506,7 +506,7 @@ Transform:
   m_GameObject: {fileID: 929711158}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.34, y: -0.92, z: 0}
+  m_LocalPosition: {x: 0.04, y: 1.53, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1550,8 +1550,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2049454887}
-  - component: {fileID: 2049454888}
+  - component: {fileID: 2049454890}
   - component: {fileID: 2049454889}
+  - component: {fileID: 2049454891}
   m_Layer: 0
   m_Name: Personaje
   m_TagString: Untagged
@@ -1576,18 +1577,6 @@ Transform:
   - {fileID: 929711159}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2049454888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2049454886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d727b1e484f652439611a62a33aea17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &2049454889
 Animator:
   serializedVersion: 5
@@ -1609,6 +1598,50 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2049454890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049454886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea18570465aec04f95736edb852bdaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerSpeed: 5
+  _sensorPosition: {fileID: 929711159}
+  _sensorRadius: 0.2
+  _groundLayer: 0
+  _turnSmoothVeloity: 0
+  _turnSmoothTime: 0.1
+--- !u!143 &2049454891
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049454886}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 3.03
+  m_Radius: 0.81
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: -0.11, y: 1.47, z: -0.09}
 --- !u!1 &2140317550
 GameObject:
   m_ObjectHideFlags: 3

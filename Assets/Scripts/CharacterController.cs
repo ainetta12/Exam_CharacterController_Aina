@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterController : MonoBehaviour
-/*{
-    
+{
+    /*
        private CharacterController _controller;
        private Transform _camera;
        private float _horizontal;
@@ -73,8 +73,8 @@ public class CharacterController : MonoBehaviour
 
         if(_isGrounded && Input.GetButtonDowm("Jump"))
         {
-
+            _playerGravity.y = Mathf.Sqrt(_jumpForce * -2 * _gravity);
+            //_anim.SetBool("IsJumping",!_isGrounded);
         }
-    }
+    }*/
 }
-*/

@@ -1,0 +1,67 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CharacterController : MonoBehaviour
+{
+    
+       private CharacterController _controller;
+       private Transform _camera;
+       private float _horizontal;
+       private float _vertical;
+
+       [SerializeField] private float _turnSmoothTime;
+       [SerializeField] private float _turnSmoothVelocity;
+       [SerializeField] private float _playerSpeed = 4;
+       [SerializeField] private float _jumpForce = 5;
+       [SerializeField] private Transform _sensorPosition;
+       [SerializeField] private float _sensorRadius = 0.2;
+       [SerializeField] private LayerMask _layer;
+
+        private bool _isGrounded;
+        private float _gravity = -9.81f;
+        private Vector3 _playergravity;
+       //Animator _anim;
+       
+
+
+    // Update is called once per frame
+    void Update()
+    {
+         _horizontal = Input.GetAxisRaw("Horizontal");
+         _vertical = Input.GetAxisRaw("Vertical");
+
+         Movement();
+         //Jump();
+
+    }
+
+    void Awake()
+    {
+       _controller = gameObject.AddComponent<CharacterController>();
+       _camera = Camera.main.transform;
+       //_anim = GetComponentInChildren<Animator>();
+
+    }
+
+    void Movement()
+    {
+       Vector3 direction = new Vector3(_horizontal ,0, _vertical);
+        if(direction! = Vector3.zero)
+        {
+            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + _camera.eulerAngle.y;
+            float smoothAngle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref _turnSmoothVelocity, _turnSmoothTime);
+            transform.rotation = Quaternion.Euler(0, smoothAngle, 0);    
+            Vector3 
+            _controller.Move(moveDirection * _playerSpeed * Time.deltaTime);
+        }
+
+        //_anim.SetFloat("VelX", 0);
+        //_anim.SetFloat("VelY", direction.magnitude);
+    }
+
+    /*void Jump()
+    {
+        
+    }*/
+}
